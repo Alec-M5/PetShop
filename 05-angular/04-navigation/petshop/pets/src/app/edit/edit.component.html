@@ -1,0 +1,18 @@
+<h1>Edit Pet</h1>
+<form (submit)='onSubmit(editForm)' #editForm="ngForm">
+  <input type="hidden" name="_id" [value]="oldPet?._id" [ngModel]='oldPet?._id'>
+  <label for="">Pet Name: </label>
+  <input type="text" name='name' [value]="oldPet?.name" [ngModel] = 'oldPet?.name'><br>
+  <label for="">Pet Type: </label>
+  <input type="text" name='type' [value]="oldPet?.type" [ngModel] = 'oldPet?.type'><br>
+  <label for="">Description: </label>
+  <!-- <textarea name="description" id="" cols="20" rows="4"></textarea><br> -->
+  <input type="text" name='description' [value]="oldPet?.description" [ngModel] = 'oldPet?.description'><br>
+  <label for="">Skills (optional): </label>
+  <ul>
+    <li><input type="text" name='skill1' [value]="oldPet?.skill1" [ngModel] = 'oldPet?.skill1'></li>
+    <li><input type="text" name="skill2" [value]="oldPet?.skill2" [ngModel] = 'oldPet?.skill2'></li>
+    <li><input type="text" name='skill3' [value]="oldPet?.skill3" [ngModel] = 'oldPet?.skill3'></li>
+  </ul>
+  <input type="submit" value='update Pet'>
+</form>

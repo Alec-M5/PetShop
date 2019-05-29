@@ -1,0 +1,22 @@
+<h1>Know of a pet needing a home? </h1>
+<div *ngIf='errors.length'>
+  <ul>
+    <li *ngFor='let error of errors'> {{error}} </li>
+  </ul>
+</div>
+<form (submit)='onSubmit()'>
+  <label for="">Pet Name: </label>
+  <input type="text" name='name' [(ngModel)]="newPet.name"><br>
+  <label for="">Pet Type: </label>
+  <input type="text" name='type' [(ngModel)]="newPet.type"><br>
+  <label for="">Description: </label>
+  <!-- <textarea name="description" id="" cols="20" rows="4"></textarea><br> -->
+  <input type="text" name='description' [(ngModel)]="newPet.description"><br>
+  <label for="">Skills (optional): </label>
+  <ul>
+    <li><input type="text" name='skill1' [(ngModel)]="newPet.skills"></li>
+    <li><input type="text" name="skill2" [(ngModel)]="newPet.skills"></li>
+    <li><input type="text" name='skill3' [(ngModel)]="newPet.skills"></li>
+  </ul>
+  <input type="submit" value='Add Pet'>
+</form>
